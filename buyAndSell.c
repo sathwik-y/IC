@@ -11,29 +11,21 @@ int main(){
     for(int i = 0; i < length; i++){
         if(prices[i] < min) {
             min = prices[i];
+            minIndex = i;
         }
     }
-        for(int i = 0; i < length; i++){
-        if(prices[i] == min) {
-            minIndex = i;
-            printf("The best day to buy the commodity is on  : Day %d ",minIndex+1);
-        }
-    } 
-    
+    printf("The best day to buy the commodity is on  : Day %d ",minIndex+1);
+
 
     // sell date 
     for(int i = minIndex; i < length ; i++) {
         if (prices[i] > max) {
             max = prices[i];
+            maxIndex = i;
         }
     }
-    for(int i = 0; i < length; i++){
-        if(prices[i] == max) {
-            maxIndex = i;
-            printf("\nThe best day to sell the commodity is on  : Day %d ",maxIndex+1);
-        }
-    }   
-
+    printf("\nThe best day to sell the commodity is on  : Day %d ",maxIndex+1);
+    
     int profit = prices[maxIndex]-prices[minIndex];
     printf("\nProfit : %d ",profit);
-} 
+}
